@@ -40,7 +40,7 @@
             <td th:text="${student.phone_number}"></td>
             <td th:text="${student.sex}"></td>
             <td th:text="${student.date_of_birth}"></td>
-            <td th:text="yyyy-MM-dd"></td>
+            <td th:text="${student.payment_date}"></td>
             <td>
                 <a th:href="@{/update/{id}(id=${student.id})}">Editar</a>
             </td>

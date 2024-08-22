@@ -68,11 +68,11 @@ public class StudentWebController {
 
     @GetMapping("/update/{id}")
     public String showUpdate(@PathVariable("id") String id, Model model) {
-        Student student = studentRepository.findById(id).orElse(null); // Obtém o aluno pelo ID
+        Student student = studentRepository.findById(id).orElse(null);
         if (student != null) {
             model.addAttribute("student", student);
         }
-        return "update"; // Nome do template Thymeleaf
+        return "update";
     }
 
     @PostMapping("/update/{id}")

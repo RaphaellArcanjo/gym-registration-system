@@ -3,5 +3,6 @@ CREATE TABLE student(
     name VARCHAR(75) NOT NULL,
     phone_number VARCHAR(15) NOT NULL,
     sex CHAR(1) CHECK (sex IN ('M', 'F')),
-    date_of_birth DATE NOT NULL
+    date_of_birth DATE NOT NULL,
+    payment_date DATE NOT NULL
 );

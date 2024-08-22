@@ -24,13 +24,17 @@ public class Student {
 
     private String sex;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate date_of_birth;
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private LocalDate payment_date;
 
     public Student(StudentRequest studentRequest){
         this.name = studentRequest.name();
         this.phone_number = studentRequest.phone_number();
         this.sex = studentRequest.sex();
         this.date_of_birth = studentRequest.date_of_birth();
+        this.payment_date = studentRequest.payment_date();
     }
 }
