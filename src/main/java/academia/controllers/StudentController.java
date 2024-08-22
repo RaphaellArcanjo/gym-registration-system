@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -57,5 +58,11 @@ public class StudentController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Student>> searchStudents(@RequestParam("name") String name) {
+        List<Student> students = repository.findByNameContaining(name);
+        return ResponseEntity.ok(students);
     }
 }

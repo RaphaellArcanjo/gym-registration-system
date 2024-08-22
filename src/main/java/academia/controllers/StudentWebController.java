@@ -27,7 +27,6 @@ public class StudentWebController {
 
     private static final String API_BASE_URL = "http://localhost:8081/api";
 
-
     @GetMapping
     public String getAllStudents(Model model) {
         ResponseEntity<List<Student>> response = restTemplate.exchange(
@@ -94,5 +93,19 @@ public class StudentWebController {
         return "redirect:/";
 
 
+    }
+
+    @GetMapping("/search")
+    public String searchStudent(@RequestParam("name") String name, Model model){
+        String url = API_BASE_URL + "/search?name=" + name;
+        ResponseEntity<List<Student>> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Student>>() {}
+        );
+        List<Student> students = response.getBody();
+        model.addAttribute("students", students != null ? students : Collections.emptyList());
+        return "searchByName";
     }
 }
