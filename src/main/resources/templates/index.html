@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Academia</title>
+</head>
+<body>
+<!-- Botão de registrar-->
+<div class="header-container">
+    <a href="/form" class="btn btn-primary">Adicionar Aluno</a>
+    <!-- Formulário de Busca -->
+    <form action="/" method="get" class="row g-2 align-items-center form-search ms-3">
+        <div class="col-md-8">
+            <input type="text" name="name" class="form-control" placeholder="Buscar por nome">
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary btn-search">Buscar</button>
+        </div>
+    </form>
+</div>
+
+<main class="table-container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">WhatsApp</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Nascimento</th>
+            <th scope="col">Pagamento</th>
+            <th scope="col">Atualizar</th>
+            <th scope="col">Remover</th>
+        <tr>
+        </thead>
+
+        <tbody>
+        <tr scope="row" th:each="student: ${index}">
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.phone_number}"></td>
+            <td th:text="${student.sex}"></td>
+            <td th:text="${student.date_of_birth}"></td>
+            <td th:text="yyyy-MM-dd"></td>
+            <td>
+                <a th:href="@{/update/{id}(id=${student.id})}">Editar</a>
+            </td>
+
+            <td>
+                <form th:action="@{/delete/{id}(id=${student.id})}" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-primary btn-search">Excluir</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+
+
+
+</body>
+</html>

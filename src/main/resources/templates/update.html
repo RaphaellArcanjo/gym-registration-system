@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar dados</title>
+    <link rel="stylesheet" href="update.css">
+</head>
+<body>
+<main class="form-container">
+    <h1>Editar dados do Aluno</h1>
+    <form action="#" method="post" class="form">
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" th:value="${student.name}">
+        </div>
+        <div class="form-group">
+            <label for="phone_number">WhatsApp:</label>
+            <input type="tel" id="phone_number" name="phone_number" th:value="${student.phone_number}">
+        </div>
+        <div class="form-group">
+            <label for="sex">Sexo:</label>
+            <select id="sex" name="sex" >
+                <option value="" disabled selected>Escolha o sexo</option>
+                <option value="M" th:selected="${student.sex == 'M'}">Masculino</option>
+                <option value="F" th:selected="${student.sex == 'F'}">Feminino</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date_of_birth">Data de Nascimento:</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" th:value="${student.date_of_birth}">
+        </div>
+        <button type="submit">Editar</button>
+    </form>
+</main>
+</body>
+</html>
+
+
+

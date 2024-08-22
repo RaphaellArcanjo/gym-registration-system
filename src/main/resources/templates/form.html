@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+<main class="form-container">
+    <h1>Cadastro de Aluno</h1>
+    <form action="#" method="post" class="form">
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone_number">WhatsApp:</label>
+            <input type="tel" id="phone_number" name="phone_number" required>
+        </div>
+        <div class="form-group">
+            <label for="sex">Sexo:</label>
+            <select id="sex" name="sex" required>
+                <option value="" disabled selected>Escolha o sexo</option>
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date_of_birth">Data de Nascimento:</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" required>
+        </div>
+        <button type="submit">Cadastrar</button>
+    </form>
+</main>
+</body>
+</html>
