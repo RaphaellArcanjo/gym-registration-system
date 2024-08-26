@@ -89,3 +89,42 @@ th, td {
     max-width: 150px;
 }
 
+
+/* Media query para telas menores que 768px (celulares) */
+@media (max-width: 767px) {
+    body {
+        padding-top: 20px;
+    }
+
+    main {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-search {
+        margin-top: 10px;
+    }
+
+    .btn-search {
+        width: 100%;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 0.5rem; 
+    }
+}
