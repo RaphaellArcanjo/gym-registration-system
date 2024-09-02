@@ -16,6 +16,8 @@
             <th scope="col">Sexo</th>
             <th scope="col">Nascimento</th>
             <th scope="col">Pagamento</th>
+            <th scope="col">Atualizar</th>
+            <th scope="col">Remover</th>
         <tr>
         </thead>
 
@@ -26,6 +28,15 @@
             <td th:text="${student.sex}"></td>
             <td th:text="${student.date_of_birth}"></td>
             <td th:text="${student.payment_date}"></td>
+            <td>
+                <a th:href="@{/update/{id}(id=${student.id})}">Editar</a>
+            </td>
+
+            <td>
+                <form th:action="@{/delete/{id}(id=${student.id})}" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-primary btn-search" onclick="return confirmDelete()">Excluir</button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>
